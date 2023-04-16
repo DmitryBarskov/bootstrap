@@ -3,9 +3,9 @@
 set -e
 
 if [[ "$(git remote get-url origin 2>/dev/null)" == */bootstrap.git ]]; then
-  echo true
+  exec ./install
 else
   git clone https://github.com/DmitryBarskov/bootstrap.git
   cd bootstrap
-  exec ./install
+  exec ./i
 fi
