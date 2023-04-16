@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -e
+
+# install homebrew
+if [ -n "$(which brew)" ]; then
+  echo "Homewbrew is installed, skipping."
+else
+  echo "Installing homebrew..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+if [ -n "$(which ansible)" ]; then
+  echo "Ansible is installed, skipping."
+else
+  echo "Installing ansible..."
+  brew install ansible
+fi
