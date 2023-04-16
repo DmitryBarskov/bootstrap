@@ -2,8 +2,7 @@
 
 set -e
 
-current_repo="$(git remote get-url origin 2>/dev/null)"
-if [[ $current_repo == */bootstrap.git ]]; then
+if [[ "$(git remote get-url origin 2>/dev/null)" == */bootstrap.git ]]; then
   echo true
 else
   git clone https://github.com/DmitryBarskov/bootstrap.git
