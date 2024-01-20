@@ -2,18 +2,29 @@
 
 set -e
 
-# install homebrew
-if [ -n "$(which brew)" ]; then
-  echo "Homewbrew is installed, skipping."
-else
-  echo "Installing homebrew..."
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  # install homebrew
+  if [ -n "$(which brew)" ]; then
+    echo "Homewbrew is installed, skipping."
+  else
+    echo "Installing homebrew..."
+    /usr/bin/env bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    if [ "$arch" == "arm64" ]; then
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+    else
+      eval "$(/usr/local/bin/brew shellenv)"
+    fi
+    brew analytics off
+  fi
 
-if [ -n "$(which ansible)" ]; then
-  echo "Ansible is installed, skipping."
+  # install ansible
+  if [ -n "$(which ansible)" ]; then
+    echo "Ansible is installed, skipping."
+  else
+    echo "Installing ansible..."
+    brew install ansible
+  fi
 else
-  echo "Installing ansible..."
-  brew install ansible
+  echo "Unsupported OS type!"
+  exit 1
 fi
