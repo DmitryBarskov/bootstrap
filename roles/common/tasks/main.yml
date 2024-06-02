@@ -3,6 +3,7 @@
     name:
       - firefox
       - google-chrome
+      - keepassxc
       - telegram
       - transmission
       - vlc

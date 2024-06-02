@@ -38,3 +38,21 @@
     key: IncludeDevelopMenu
     type: bool
     value: true
+- name: Show inspect in Safari context menu
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: WebKitDeveloperExtras
+    type: bool
+    value: true
+- name: Enable Safari developer tools
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: WebKitDeveloperExtrasEnabledPreferenceKey
+    type: bool
+    value: true
+- name: Enable Safari developer tools
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled
+    type: bool
+    value: true

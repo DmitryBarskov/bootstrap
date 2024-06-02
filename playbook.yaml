@@ -1,4 +1,4 @@
-- name: Install mac applications
+- name: MacOS setup
   hosts: mac
   roles:
     - dev
