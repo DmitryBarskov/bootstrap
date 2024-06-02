@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+output_key_file="$HOME/.ssh/id_ed25519"
+default_email="dmitry.barskov64@gmail.com"
+github_add_key_url="https://github.com/settings/ssh/new"
+
+if [ -f "$output_key_file" ]; then
+  echo "File $output_key_file already exists"
+  exit 1
+fi
+
+echo "Type your email (${default_email}):"
+read email
+ssh-keygen -t ed25519 -C "${email:-$default_email}" -f "$output_key_file"
+
+echo "
+Host github.com
+  AddKeysToAgent yes
+  UseKeychain yes
+  IdentityFile $output_key_file
+" >> ~/.ssh/config
+
+cat "$output_key_file.pub" | pbcopy
+echo "Open $github_add_key_url and paste the new key"
+open "$github_add_key_url"
