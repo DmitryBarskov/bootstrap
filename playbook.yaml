@@ -1,0 +1,5 @@
+- name: Install mac applications
+  hosts: mac
+  roles:
+    - dev
+    - mac-defaults

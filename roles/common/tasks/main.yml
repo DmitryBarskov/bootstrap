@@ -1,0 +1,8 @@
+- name: Install GUI apps
+  homebrew_cask:
+    name:
+      - firefox
+      - google-chrome
+      - telegram
+      - transmission
+      - vlc

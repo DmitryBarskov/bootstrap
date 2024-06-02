@@ -1,2 +1,3 @@
-ping:
-	ansible all -m ping
+mac:
+	ansible-galaxy install -r requirements.yml
+	ansible-playbook -i inventory.ini playbook.yaml

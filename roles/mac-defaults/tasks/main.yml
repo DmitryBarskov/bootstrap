@@ -1,0 +1,40 @@
+- name: Make Finder closable
+  community.general.osx_defaults:
+    domain: com.apple.finder
+    key: QuitMenuItem
+    type: bool
+    value: true
+- name: Hide Dock automatically
+  community.general.osx_defaults:
+    domain: com.apple.dock
+    key: autohide
+    type: bool
+    value: true
+- name: Hide recents from Dock
+  community.general.osx_defaults:
+    domain: com.apple.Dock
+    key: show-recents
+    type: bool
+    value: false
+- name: Start key repeat sooner when a key presesd
+  community.general.osx_defaults:
+    key: InitialKeyRepeat
+    type: int
+    value: 10
+- name: Faster key repeat
+  community.general.osx_defaults:
+    key: KeyRepeat
+    type: int
+    value: 1
+- name: Show full URL in Safari
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: ShowFullURLInSmartSearchField
+    type: bool
+    value: true
+- name: Enable Safari developer tools
+  community.general.osx_defaults:
+    domain: com.apple.Safari
+    key: IncludeDevelopMenu
+    type: bool
+    value: true

@@ -1,5 +1,0 @@
-[remotes]
-linux ansible_host=oracle-cloud
-
-[local]
-mac ansible_connection=local
