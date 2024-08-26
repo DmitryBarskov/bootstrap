@@ -1,0 +1,4 @@
+- name: Install GUI apps
+  homebrew_cask:
+    name:
+      - slack

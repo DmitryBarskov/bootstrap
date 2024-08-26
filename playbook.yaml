@@ -1,5 +1,8 @@
 - name: MacOS setup
   hosts: mac
   roles:
+    - common
     - dev
     - mac-defaults
+    - mac-app-store
+    - work

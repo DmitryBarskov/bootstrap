@@ -1,6 +1,7 @@
 - name: Install GUI apps
   homebrew_cask:
     name:
+      - amethyst
       - firefox
       - google-chrome
       - keepassxc

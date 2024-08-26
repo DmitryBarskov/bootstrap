@@ -1,0 +1,8 @@
+- name: Required mas utility
+  homebrew:
+    name:
+      - mas
+- name: Install Todo
+  community.general.mas:
+    id: 1274495053
+    state: present
