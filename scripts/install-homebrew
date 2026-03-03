@@ -1,0 +1,35 @@
+#!/bin/bash
+
+QUIET=0
+
+echo_msg() {
+  if [[ $QUIET -ne 1 ]]; then
+    echo "$1"
+  fi
+}
+
+
+while getopts "q" opt; do
+  case $opt in
+    q)
+      QUIET=1
+      ;;
+    *)
+      echo_msg "Usage: $0 [-q] to run quietly"
+      exit 1
+      ;;
+  esac
+done
+
+if command -v brew >/dev/null; then
+  echo_msg "Homebrew is already installed"
+  exit 0
+fi
+
+echo_msg "Installing Homewbrew..."
+if /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"; then
+  echo_msg "Homebrew successfully installed"
+else
+  echo_msg "Homebrew installation failed"
+  exit 1
+fi

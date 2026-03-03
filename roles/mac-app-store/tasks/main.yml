@@ -2,7 +2,7 @@
   homebrew:
     name:
       - mas
-- name: Install Todo
+- name: Install uBlock Origin Lite (Safari extension)
   community.general.mas:
-    id: 1274495053
+    id: 6745342698
     state: present

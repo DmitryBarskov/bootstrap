@@ -1,12 +1,17 @@
 - name: Install CLI apps
   homebrew:
     name:
+      - colima
+      - docker
+      - mise
       - tmux
-      - wget
 - name: Install GUI apps
   homebrew_cask:
     name:
-      - docker
       - iterm2
-      - macvim
       - visual-studio-code
+- name: Install MacVim
+  homebrew_cask:
+    name: macvim
+    state: present
+  ignore_errors: true

@@ -1,10 +1,20 @@
+- name: Tap a Homebrew repository, state present
+  community.general.homebrew_tap:
+    name: localsend/localsend
 - name: Install GUI apps
   homebrew_cask:
     name:
-      - amethyst
+      - android-file-transfer
       - firefox
-      - google-chrome
       - keepassxc
+      - localsend
       - telegram
+      - todoist-app
       - transmission
       - vlc
+- name: Install CLI apps
+  homebrew:
+    name:
+      - neovim
+      - syncthing
+      - wget
