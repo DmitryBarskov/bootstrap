@@ -6,3 +6,7 @@
   community.general.mas:
     id: 6745342698
     state: present
+- name: Install Microsoft Todo
+  community.general.mas:
+    id: 1274495053
+    state: present
